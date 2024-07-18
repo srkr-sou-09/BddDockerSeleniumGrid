@@ -12,22 +12,12 @@ node {
         // Run the maven build
         withEnv(["MVN_HOME=$mvnHome"]) {
             if (isUnix()) {
-                sh 'mvn clean install'
+                sh 'mvn verify'
             } else {
-                bat 'mvn clean install'
+                bat 'mvn verify'
             }
         }
         
-    }
-    stage('Test') {
-        // Run the maven build
-        withEnv(["MVN_HOME=$mvnHome"]) {
-            if (isUnix()) {
-                sh 'mvn test'
-            } else {
-                bat 'mvn test'
-            }
-        }    
     }
     
     stage('Cucumber Reports') {
