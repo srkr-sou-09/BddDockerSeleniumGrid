@@ -14,8 +14,7 @@ import io.cucumber.testng.CucumberOptions.SnippetType;
 		,snippets = SnippetType.CAMELCASE
 		,plugin= {"pretty",
                 "com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:",
-                "timeline:test-output-thread/",
-                "json.target/cucumber.json"
+                "timeline:test-output-thread/"
 		}
 		
 		)

@@ -34,8 +34,8 @@ node {
         // Run the maven build
         steps{
             cucumber buildStatus: "Unstable",
-            fileIncludePattern:"**/cucumber.json",
-            jsonReportDirectory:'target'
+            fileIncludePattern:"**/SparkReport/MySparkReport.html",
+            jsonReportDirectory:'test-output'
             
         }
 
