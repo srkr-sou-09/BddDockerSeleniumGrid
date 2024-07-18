@@ -28,8 +28,8 @@ node {
                               allowMissing: false, 
                               alwaysLinkToLastBuild: false, 
                               keepAll: false, 
-                              reportDir: 'Reports', 
-                              reportFiles: 'Spark.html', 
+                              reportDir: 'test-output/SparkReport', 
+                              reportFiles: 'MySparkReport.html', 
                               reportName: 'ExtentReport', 
                               reportTitles: '', 
                               useWrapperFileDirectly: true])
