@@ -1,17 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: TestSuite
 -------------------------------------------------------------------------------
-Tests run: 1, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 159.074 s <<< FAILURE! - in TestSuite
-setUpClass(testRunner.TestRunner)  Time elapsed: 0.657 s  <<< FAILURE!
-java.lang.IllegalArgumentException: 
-The plugin specification 'target/cucumber.json' has a problem:
-
-Could not load plugin class 'target/cucumber.json'.
-
-Plugin specifications should have the format of PLUGIN[:[PATH|[URI [OPTIONS]]]
-
-Valid values for PLUGIN are: html, json, junit, message, pretty, progress, rerun, summary, teamcity, testng, timeline, unused, usage
-
-PLUGIN can also be a fully qualified class name, allowing registration of 3rd party plugins. The 3rd party plugin must implement io.cucumber.plugin.Plugin
-Caused by: java.lang.ClassNotFoundException: target/cucumber.json
-
+Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 193.957 s - in TestSuite
