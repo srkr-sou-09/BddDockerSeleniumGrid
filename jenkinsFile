@@ -1,0 +1,44 @@
+node {
+    def mvnHome
+    stage('Checkout') { // for display purposes
+        // Get some code from a GitHub repository
+        git 'https://github.com/srkr-sou-09/BddDockerSeleniumGrid.git'
+        // Get the Maven tool.
+        // ** NOTE: This 'M3' Maven tool must be configured
+        // **       in the global configuration.
+        mvnHome = tool 'apache maven 3.8.8'
+    }
+    stage('Compile') {
+        // Run the maven build
+        withEnv(["MVN_HOME=$mvnHome"]) {
+            if (isUnix()) {
+                sh 'mvn clean install'
+            } else {
+                bat 'mvn clean install'
+            }
+        }
+        
+    }
+    stage('Compile') {
+        // Run the maven build
+        withEnv(["MVN_HOME=$mvnHome"]) {
+            if (isUnix()) {
+                sh 'mvn test'
+            } else {
+                bat 'mvn test'
+            }
+        }    
+    }
+    
+    stage('Cucumber Reports') {
+        // Run the maven build
+        steps{
+            cucumber buildStatus: "Unstable",
+            fileIncludePattern:"**/cucumber.json",
+            jsonReportDirectory:'target'
+            
+        }
+
+        
+    }
+}
