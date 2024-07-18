@@ -12,9 +12,9 @@ node {
         // Run the maven build
         withEnv(["MVN_HOME=$mvnHome"]) {
             if (isUnix()) {
-                sh 'mvn -D clean test'
+                sh 'mvn verify'
             } else {
-                bat 'mvn -D clean test'
+                bat 'mvn verify'
             }
         }    
     }
