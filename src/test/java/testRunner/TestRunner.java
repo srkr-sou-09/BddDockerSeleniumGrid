@@ -1,7 +1,5 @@
 package testRunner;
 
-import java.io.IOException;
-
 import org.testng.annotations.DataProvider;
 
 import io.cucumber.testng.AbstractTestNGCucumberTests;
