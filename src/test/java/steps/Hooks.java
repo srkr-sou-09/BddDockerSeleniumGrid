@@ -1,5 +1,7 @@
 package steps;
 
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeMethod;
 import java.io.IOException;
 import java.net.URL;
 
@@ -15,7 +17,7 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class Hooks {
 	
-	@Before
+	@BeforeMethod
 	public void startUp() throws IOException, InterruptedException {
 		System.out.println("@@@@Before Hook@@@@");
 		
@@ -59,7 +61,7 @@ public class Hooks {
 			 
 	}
 
-	@After
+	@AfterMethod
 	public void tearDown() {
 		System.out.println("@@@@After Hook@@@@");
 		//driver.close();
