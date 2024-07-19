@@ -1,7 +1,5 @@
-pipeline {
-	agent any
+node {
     def mvnHome
-    stages {
     stage('Checkout') { // for display purposes
         // Get some code from a GitHub repository
         git 'https://github.com/srkr-sou-09/BddDockerSeleniumGrid.git'
@@ -41,13 +39,12 @@ pipeline {
             }
         }    
     }
-    }
     
-    post('Cucumber report') {                
+    stage('Cucumber report') {                
                  
                 // If Maven was able to run the tests, even if some of the test
                 // failed, record the test results and archive the jar file.               
-  
+  		echo "HTML publish";
       publishHTML([
                   allowMissing: false, 
                   alwaysLinkToLastBuild: false, 
