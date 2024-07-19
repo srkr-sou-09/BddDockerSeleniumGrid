@@ -8,18 +8,39 @@ node {
         // **       in the global configuration.
         mvnHome = tool 'apache maven 3.8.8'
     }
-    stage('Test') {
+    stage('Maven Clean') {
         // Run the maven build
         withEnv(["MVN_HOME=$mvnHome"]) {
             if (isUnix()) {
-                sh 'mvn verify'
+                sh 'mvn clean'
             } else {
-                bat 'mvn verify'
+                bat 'mvn clean'
+            }
+        }    
+    }
+    stage('Maven Install') {
+        // Run the maven build
+        withEnv(["MVN_HOME=$mvnHome"]) {
+            if (isUnix()) {
+                sh 'mvn install'
+            } else {
+                bat 'mvn install'
             }
         }    
     }
     
-    post {                
+    stage('Test') {
+        // Run the maven build
+        withEnv(["MVN_HOME=$mvnHome"]) {
+            if (isUnix()) {
+                sh 'mvn test'
+            } else {
+                bat 'mvn test'
+            }
+        }    
+    }
+    
+    stage('Cucumber report') {                
                  
                 // If Maven was able to run the tests, even if some of the test
                 // failed, record the test results and archive the jar file.               
