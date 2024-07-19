@@ -40,19 +40,4 @@ node {
         }    
     }
     
-    stage('Cucumber report') {                
-                 
-                // If Maven was able to run the tests, even if some of the test
-                // failed, record the test results and archive the jar file.               
-  		echo "HTML publish";
-      publishHTML([
-                  allowMissing: false, 
-                  alwaysLinkToLastBuild: false, 
-                  keepAll: false, 
-                  reportDir: 'test-output/SparkReport', 
-                  reportFiles: 'MySparkReport.html', 
-                  reportName: 'ExtentReport', 
-                  reportTitles: '', 
-                  useWrapperFileDirectly: true])
-    }
 }
