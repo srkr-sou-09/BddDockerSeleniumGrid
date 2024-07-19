@@ -2,7 +2,10 @@ package steps;
 
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.BeforeSuite;
+
 import java.io.IOException;
+import java.net.MalformedURLException;
 import java.net.URL;
 
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -17,8 +20,8 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class Hooks {
 	
-	@BeforeMethod
-	public void startUp() throws IOException, InterruptedException {
+	@Before
+	public void startUpDocker() throws IOException, InterruptedException {
 		System.out.println("@@@@Before Hook@@@@");
 		
 		
@@ -49,19 +52,16 @@ public class Hooks {
 			 * SetUpWebDriver.driver.get().get("https://google.com");
 			 * 
 			 */
-
-		
-			
-			  ChromeOptions chromeOptions = new ChromeOptions(); //
-			  chromeOptions.setCapability("browserName", "chrome");
-			  //chromeOptions.setCapability("platformName", "Windows 11"); 
-			  // Showing a test 
-			  SetUpWebDriver.driver.set( new RemoteWebDriver(new
-			  URL("http://localhost:4444"), chromeOptions));
-			 
+		  
+		  ChromeOptions chromeOptions = new ChromeOptions(); //
+		  chromeOptions.setCapability("browserName", "chrome");
+		  //chromeOptions.setCapability("platformName", "Windows 11"); 
+		  // Showing a test 
+		  SetUpWebDriver.driver.set( new RemoteWebDriver(new URL("http://localhost:4444"), chromeOptions));
 	}
+	
 
-	@AfterMethod
+	@After
 	public void tearDown() {
 		System.out.println("@@@@After Hook@@@@");
 		//driver.close();

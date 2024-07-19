@@ -1,0 +1,19 @@
+-------------------------------------------------------------------------------
+Test set: testRunner.TestRunner
+-------------------------------------------------------------------------------
+Tests run: 5, Failures: 5, Errors: 0, Skipped: 0, Time elapsed: 1.945 s <<< FAILURE! - in testRunner.TestRunner
+runScenario(testRunner.TestRunner)  Time elapsed: 0.306 s  <<< FAILURE!
+java.lang.NullPointerException: Cannot invoke "org.openqa.selenium.WebDriver.get(String)" because the return value of "java.lang.ThreadLocal.get()" is null
+
+runScenario(testRunner.TestRunner)  Time elapsed: 0.306 s  <<< FAILURE!
+java.lang.NullPointerException: Cannot invoke "org.openqa.selenium.WebDriver.get(String)" because the return value of "java.lang.ThreadLocal.get()" is null
+
+runScenario(testRunner.TestRunner)  Time elapsed: 0.306 s  <<< FAILURE!
+java.lang.NullPointerException: Cannot invoke "org.openqa.selenium.WebDriver.get(String)" because the return value of "java.lang.ThreadLocal.get()" is null
+
+runScenario(testRunner.TestRunner)  Time elapsed: 0.307 s  <<< FAILURE!
+java.lang.NullPointerException: Cannot invoke "org.openqa.selenium.WebDriver.get(String)" because the return value of "java.lang.ThreadLocal.get()" is null
+
+runScenario(testRunner.TestRunner)  Time elapsed: 0.307 s  <<< FAILURE!
+java.lang.NullPointerException: Cannot invoke "org.openqa.selenium.WebDriver.get(String)" because the return value of "java.lang.ThreadLocal.get()" is null
+
