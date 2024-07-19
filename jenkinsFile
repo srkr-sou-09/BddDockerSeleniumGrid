@@ -1,4 +1,4 @@
-node {
+pipeline {
     def mvnHome
     stage('Checkout') { // for display purposes
         // Get some code from a GitHub repository
@@ -40,7 +40,7 @@ node {
         }    
     }
     
-    stage('Cucumber report') {                
+    post('Cucumber report') {                
                  
                 // If Maven was able to run the tests, even if some of the test
                 // failed, record the test results and archive the jar file.               
@@ -54,5 +54,5 @@ node {
                   reportName: 'ExtentReport', 
                   reportTitles: '', 
                   useWrapperFileDirectly: true])
-                }
+    }
 }
